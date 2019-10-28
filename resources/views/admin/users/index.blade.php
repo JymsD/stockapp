@@ -26,7 +26,11 @@
             <tr>
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
-              <td>{{ $user->role_id }}</td>
+
+              @foreach($user->roles as $role)
+                <td>{{ $role->name }}</td>
+              @endforeach
+              
               <td>
                 <a href="#" class="btn btn-warning btn-circle btn-sm" title="Editar">
                   <i class="fas fa-edit"></i>
