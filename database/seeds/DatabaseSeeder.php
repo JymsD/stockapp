@@ -11,6 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // La creación de datos de roles debe ejecutarse primero
+        $this->call(RoleSeeder::class);
+        // Los usuarios necesitarán los roles previamente generados
+        $this->call(UserSeeder::class);
     }
 }
