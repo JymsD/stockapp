@@ -23,7 +23,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
     <!-- Sidebar -->
-    <ul id="accordionSidebar" class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion">
+    <ul id="accordionSidebar" class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion">
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
         <!--<div class="sidebar-brand-icon rotate-n-15">
@@ -58,8 +58,8 @@
         <div id="collapseRole" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!--<h6 class="collapse-header">Custom Components:</h6>-->
-            <a class="collapse-item" href="#">Listado</a>
-            <a class="collapse-item" href="#">Agregar</a>
+            <a class="collapse-item" href="{{ url('/admin/roles') }}">Listado</a>
+            <a class="collapse-item" href="{{ url('/admin/roles/create') }}">Agregar</a>
           </div>
         </div>
       </li>
@@ -73,8 +73,8 @@
         <div id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!--<h6 class="collapse-header">Custom Components:</h6>-->
-            <a class="collapse-item" href="#">Listado</a>
-            <a class="collapse-item" href="#">Agregar</a>
+            <a class="collapse-item" href="{{ url('/admin/users') }}">Listado</a>
+            <a class="collapse-item" href="{{ url('/admin/users/create') }}">Agregar</a>
           </div>
         </div>
       </li>
