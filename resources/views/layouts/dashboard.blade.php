@@ -44,6 +44,8 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
+
+      @if (Auth::user()->hasRole('admin'))
       <!-- Heading -->
       <div class="sidebar-heading">
         Administrador
@@ -81,11 +83,14 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
+      @endif
+
       <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href="#">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Link</span></a>
+          <span>Link</span>
+        </a>
       </li>
 
       <!-- Divider -->
