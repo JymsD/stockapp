@@ -26,7 +26,7 @@
               <td>{{ $role->name }}</td>
               <td>{{ $role->description }}</td>
               <td>
-                <a href="#" class="btn btn-warning btn-circle btn-sm" title="Editar">
+                <a href="{{ 'roles/'.$role->id.'/edit' }}" class="btn btn-warning btn-circle btn-sm" title="Editar">
                   <i class="fas fa-edit"></i>
                 </a>
               </td>

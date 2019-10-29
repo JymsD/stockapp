@@ -27,7 +27,7 @@ class UserController extends Controller
     public function create()
     {
         $user = new User;
-        $roles = Role::orderBy('name','ASC')->pluck('name','id');
+        $roles = Role::orderBy('name','ASC')->pluck('description','id');
         return view('admin.users.create', ["user" => $user, "roles" => $roles]);
     }
 
@@ -46,6 +46,7 @@ class UserController extends Controller
         $user->role_id = $request->role_id;
 
         if ($user->save()) {
+            $user->roles()->attach($request->role_id);
             return redirect('admin/users'); 
         } else {
             return view('admin.users.create', ["user" => $user]);
@@ -72,7 +73,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.users.edit')->with('user', $user);
+        $roles = Role::orderBy('name','ASC')->pluck('description','id');
+        return view('admin.users.edit', ["user" => $user, "roles" => $roles]);
     }
 
     /**
@@ -89,6 +91,7 @@ class UserController extends Controller
         $user->role_id = $request->role_id;
 
         if ($user->save()) {
+            $user->roles()->attach($request->role_id);
             return redirect('admin/users'); 
         } else {
             return view('admin.users.create', ["user" => $user]);

@@ -5,7 +5,7 @@
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
       <h6 class="m-0 font-weight-bold text-gray-900">Usuarios</h6>
       <div class="dropdown no-arrow">
-        <a href="#" class="btn btn-secondary btn-circle btn-sm" title="Nuevo">
+        <a href="{{ url('/admin/users/create') }}" class="btn btn-secondary btn-circle btn-sm" title="Nuevo">
           <i class="fas fa-plus"></i>
         </a>
       </div>
@@ -30,9 +30,8 @@
               @foreach($user->roles as $role)
                 <td>{{ $role->name }}</td>
               @endforeach
-              
               <td>
-                <a href="#" class="btn btn-warning btn-circle btn-sm" title="Editar">
+                <a href="{{ 'users/'.$user->id.'/edit' }}" class="btn btn-warning btn-circle btn-sm" title="Editar">
                   <i class="fas fa-edit"></i>
                 </a>
               </td>

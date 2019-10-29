@@ -6,11 +6,11 @@
     <!-- form user info -->
     <div class="card">
       <div class="card-header">
-        <h4 class="mb-0">Nuevo Rol</h4>
+        <h4 class="mb-0">Nuevo Usuario</h4>
       </div>
       <div class="card-body">
         <!-- Formulario-->
-        @include('admin.roles.form',['role' => $role, 'url' => '/admin/roles', 'method' => 'POST'])
+        @include('admin.users.form',['user' => $user, 'url' => '/admin/users', 'method' => 'POST'])
       </div>
     </div>
     <!-- /form user info -->
